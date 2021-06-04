@@ -1,0 +1,237 @@
+
+1. Programming Paradigms Blend
+
+	unittest0030.py -> contém métodos fora de classe e classe de teste utilizando esses métodos que não pertencem a nenhuma classe
+	unittest0046.py -> métodos de teste fora da classe
+	unittest0050.py -> um método de teste fora de classe
+	unittest0054.py -> há asserts, mas não há classe de teste, métodos de teste estão fora de classe. Há classe externa sendo utilizada nos testes
+	unittest0098.py -> parte procedural e parte OO. Variáveis globais utilizadas em métodos de teste
+	unittest0144.py -> parte procedural e parte OO. Variáveis globais utilizadas em métodos de teste (USADO NA DISSERTAÇÃO)
+	unittest0257.py -> método de teste fora de classe
+
+
+2. uso variáveis globais dentro de classe de teste
+	https://www.embarcados.com.br/por-que-evitar-variaveis-globais/
+	https://deviq.com/code-smells/
+
+	unittest0025.py -> variável global fora da classe de teste
+	unittest0062.py -> variável global dentro da classe de teste
+	unittest0256.py -> variável global fora da classe de teste
+	unittest0094.py -> variável global dentro da classe de teste
+
+
+3. escopo que não realiza nada (Em Python: "pass")
+	unittest0001.py -> métodos SetUp e TearDown
+	unittest0003.py -> métodos SetUp e TearDown
+	unittest0025.py -> 332~336 (empty test?)
+	unittest0029.py -> 55~70
+	unittest0030.py -> 62~73
+	unittest0031.py -> métodos SetUp e TearDown
+	unittest0033.py -> 188~203
+	unittest0035.py -> 122~132
+	unittest0037.py -> 112~119
+	unittest0043.py -> 76~101
+	unittest0068.py -> 156~167
+	unittest0088.py -> método TearDown
+	unittest0091.py -> métodos SetUp e TearDown
+	unittest0092.py -> métodos SetUp e TearDown
+	unittest0095.py -> métodos SetUp e TearDown
+	unittest0097.py -> métodos SetUp e TearDown
+	unittest0099.py -> métodos SetUp e TearDown
+	unittest0232.py -> 945~963
+
+
+4. Undefined Test
+	"A testcase is created by subclassing unittest.TestCase. The three individual tests are defined with methods whose names start with the letters test. This naming convention informs the test runner about which methods represent tests." (https://docs.python.org/3/library/unittest.html)
+
+	unittest0028.py -> não começam com a nomenclatura correspondente, portanto não são reconhecido como teste ao executar.
+
+
+
+Classes para serem excluídas do dataset:
+
+(x) unittest0042.py -> não há assert, nem classe de teste
+(x) unittest0076.py -> não há assert, nem classe de teste
+(x) unittest0086.py -> não há assert, nem classe de teste
+(x) unittest0087.py -> não há assert, nem classe de teste
+(x) unittest0183.py -> não há assert, nem classe de teste
+(x) unittest0300.py -> não há nenhuma classe, apenas métodos. Não há métodos de teste
+
+
+
+async / await -> keywords que podem ser indicativos de Flaky Tests em Python
+
+
+
+################################################################################
+
+
+
+Assertion Roulette
+	- unittest0004.py
+	- unittest0005.py
+	- unittest0006.py
+	- unittest0008.py
+	- unittest0014.py
+	- unittest0015.py
+	- unittest0175.py : 241~247, 258~272 -> good example (EXEMPLO USADO NA DISSERTAÇÃO)
+	- unittest0263.py
+	- unittest0250.py
+	- unittest0254.py
+	- unittest0276.py
+	- unittest0287.py
+	- pytest0005.py (EXEMPLO GRANDE: 194~235)
+	- pytest0006.py (EXEMPLO USADO NA DISSERTAÇÃO)
+	- pytest0007.py
+
+Conditional Test Logic
+	- unittest0008.py
+	- unittest0011.py
+	- unittest0014.py
+	- unittest0015.py
+	- unittest0026.py
+	- unittest0080.py : 138~154
+	- unittest0091.py
+	- unittest0231.py
+	- unittest0250.py : 549~563
+	- unittest0257.py : 99~119
+	- unittest0263.py
+	- unittest0272.py : 126~175 (EXEMPLO USADO NA DISSERTAÇÃO)
+	- unittest0284.py : many examples
+	- unittest0287.py
+	- pytest0039.py : 670~699
+	- pytest0155.py : 79~113
+	- pytest0050.py : 751~765
+
+Constructor Initialization (def __init__(self):)
+	- unittest0080.py
+	- unittest0266.py (EXEMPLO USADO NA DISSERTAÇÃO)
+	- unittest0257.py
+	- unittest0304.py
+	- unittest0307.py
+	- unittest0313.py
+	- unittest0315.py
+
+Default Test
+	- Não encontrado
+
+Duplicate Assert
+	- unittest0008.py
+	- unittest0221.py : 1610~1636
+	- unittest0276.py : 25~36 (EXEMPLO USADO NA DISSERTAÇÃO)
+
+Eager Test
+	- unittest0005.py (EXEMPLO USADO NA DISSERTAÇÃO)
+
+Empty Test
+	- unittest0001.py (EXEMPLO USADO NA DISSERTAÇÃO)
+
+Exception Handling
+	>>> raise (semelhante ao "throw" do java)
+	- unittest0001.py
+	- unittest0020.py : 35~41 (EXEMPLO USADO NA DISSERTAÇÃO)
+	- unittest0098.py
+
+General Fixture
+	- unittest0033.py -> good example (EXEMPLO USADO NA DISSERTAÇÃO)
+
+Ignored Test
+	>>> @unittest.skip (parecido com o "@Ignore" do junit, porem com o skip é possível inserir a condição para ser ignorado)
+	>>> @nottest (semelhante ao "@Ignore" do junit)
+	- unittest0025.py : 621~634 (EXEMPLO USADO NA DISSERTAÇÃO)
+	- pytest0024.py :  (EXEMPLO USADO NA DISSERTAÇÃO)
+	- unittest0001.py : 44~46
+	- unittest0037.py (?) : 730~741
+	- unittest0045.py (?) : 10~12
+	- unittest0075.py (?)
+	- unittest0101.py
+	- unittest0102.py
+	- unittest0103.py
+	- unittest0104.py
+	- unittest0106.py
+	- unittest0107.py
+	- unittest0122.py
+	- unittest0125.py
+	- unittest0143.py
+	- unittest0194.py
+	- unittest0199.py
+	- unittest0214.py
+	- unittest0216.py
+	- unittest0218.py
+	- unittest0221.py
+	- unittest0222.py
+	- unittest0227.py
+	- unittest0228.py
+	- unittest0231.py
+	- unittest0233.py
+	- unittest0234.py
+	- unittest0237.py
+	- unittest0239.py
+	- unittest0241.py
+	- unittest0243.py
+	- unittest0244.py
+	- unittest0249.py
+	- unittest0253.py
+	- unittest0269.py
+	- unittest0301.py
+	
+Lazy Test
+	- unittest0011.py
+	- unittest0195.py
+	- unittest0250.py : test_kwargs_signature, test_nested_args_signature, test_kwargs_signature
+		(EXEMPLO USADO NA DISSERTAÇÃO)
+
+Magic Number Test
+	- unittest0007.py (EXEMPLO USADO NA DISSERTAÇÃO)
+
+Mystery Guest
+	- unittest0002.py (?)
+	- unittest0011.py
+	- unittest0031.py
+	- unittest0053.py : 105~119
+	- unittest0038.py : 178~191
+	- unittest0200.py : 57~64 (EXEMPLO USADO NA DISSERTAÇÃO)
+	- unittest0203.py
+
+Redundant Assert
+	- unittest0031.py : vários exemplos (EXEMPLO USADO NA DISSERTAÇÃO)
+
+Redundant Print
+	>>> print(
+	- unittest0004.py
+	- unittest0009.py
+	- unittest0067.py
+	- unittest0263.py : 2181~2199 (EXEMPLO USADO NA DISSERTAÇÃO)
+
+Resource Optimism
+	>>> os.path.exists(), os.path.isfile(), os.path.isdir(), pathlibPath.exists()
+	- unittest0075.py (EXEMPLO USADO NA DISSERTAÇÃO)
+	- unittest0031.py
+	- unittest0256.py : 260 ~ 274
+	- unittest0261.py : 252, setup utiliza método que não verifica existencia de arquivo
+	- unittest0265.py : 236~255,  setup utiliza arquivo sem verificar sua existência
+
+
+
+Sensitive Equality
+	>>> __str__() ou str( something )
+	- unittest0023.py : 40~49 (EXEMPLO USADO NA DISSERTAÇÃO)
+
+Sleepy Test
+	>>> time.sleep(2) or event.wait(1)
+	- unittest0025.py
+	- unittest0030.py
+	- unittest0033.py (EXEMPLO USADO 2x NA DISSERTAÇÃO - event.wait e time.sleep)
+	- pytest0081.py
+	- pytest0263.py
+	- pytest0279.py
+
+
+Unknown Test
+	- unittest0004.py (EXEMPLO USADO NA DISSERTAÇÃO)
+
+
+Verbose Test -> OBS.: 123 linhas (JUnit, Java)
+	- unittest0023.py : 51~147
+	- unittest0257.py
+	- unittest0263.py : 2011~2133, 2576~2702 (EXEMPLO USADO NA DISSERTAÇÃO)
